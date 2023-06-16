@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration System</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+    <div class="form-container">
+        <div id="loginSection">
+            <h1>Login</h1>
+            <form id="loginForm" action="login.php" method="POST">
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div>
+                    <input type="submit" value="Login">
+                </div>
+            </form>
+            <button id="switchToRegisterButton">Switch to Register</button>
+        </div>
+
+        <div id="registerSection" style="display: none;">
+            <h1>Register</h1>
+            <form id="registerForm" action="register.php" method="POST">
+                <div>
+                    <label for="newUsername">Username:</label>
+                    <input type="text" id="newUsername" name="newUsername" required>
+                </div>
+                <div>
+                    <label for="newPassword">Password:</label>
+                    <input type="password" id="newPassword" name="newPassword" required>
+                </div>
+                <div>
+                    <input type="submit" value="Register">
+                </div>
+            </form>
+            <button id="switchToLoginButton">Switch to Login</button>
+        </div>
+    </div>
+
+    <script src="assets/js/validation.js"></script>
+    <script>
+        document.getElementById("switchToRegisterButton").addEventListener("click", function () {
+            document.getElementById("loginSection").style.display = "none";
+            document.getElementById("registerSection").style.display = "block";
+        });
+
+        document.getElementById("switchToLoginButton").addEventListener("click", function () {
+            document.getElementById("registerSection").style.display = "none";
+            document.getElementById("loginSection").style.display = "block";
+        });
+    </script>
+</body>
+</html>
